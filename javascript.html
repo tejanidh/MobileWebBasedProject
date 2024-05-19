@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Topics</title>
     <link rel="stylesheet" href="javascript.css">
+   
 </head>
 <body>
     <header>
@@ -18,15 +19,24 @@
     </header>
     <main>
         <section>
-            <h2>Data Types</h2>
+            <h2>Data Types and Variables</h2>
             <p>JavaScript supports various data types including:</p>
             <ul>
-                <li><strong>String:</strong> Textual data. Example: <code>"Hello, World!"</code></li>
-                <li><strong>Number:</strong> Numeric data. Example: <code>42</code></li>
-                <li><strong>Boolean:</strong> True or false. Example: <code>true</code></li>
-                <li><strong>Object:</strong> Collections of key-value pairs. Example: <code>{ name: "John", age: 30 }</code></li>
-                <li><strong>Array:</strong> Ordered lists of values. Example: <code>[1, 2, 3, 4, 5]</code></li>
+                <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
+                <li><strong>Number:</strong> Numeric data. Example: <code>let age = 30;</code></li>
+                <li><strong>Boolean:</strong> True or false. Example: <code>let isStudent = true;</code></li>
+                <li><strong>Object:</strong> Collections of key-value pairs. Example: <code>let person = {name: "John", age: 30};</code></li>
+                <li><strong>Array:</strong> Ordered lists of values. Example: <code>let fruits = ["Apple", "Banana", "Cherry"];</code></li>
             </ul>
+            <p>Example:</p>
+            <pre><code>
+var x = 100;
+alert("The datatype of x: " + typeof(x));
+x = "Sheridan College";
+alert("The datatype of x: " + typeof(x));
+x = true;
+alert("The datatype of x: " + typeof(x));
+            </code></pre>
         </section>
         <section>
             <h2>Control Constructs</h2>
@@ -40,46 +50,81 @@
         <section>
             <h2>Functions</h2>
             <p>Functions are blocks of code designed to perform a particular task. Example:</p>
-            <pre><code>function greet(name) {
+            <pre><code>
+function greet(name) {
     return "Hello, " + name + "!";
-}</code></pre>
+}
+            </code></pre>
         </section>
         <section>
             <h2>Objects</h2>
             <p>Objects are collections of properties and methods. Example:</p>
-            <pre><code>var person = {
+            <pre><code>
+var person = {
     firstName: "John",
     lastName: "Doe",
     fullName: function() {
         return this.firstName + " " + this.lastName;
     }
-};</code></pre>
+};
+            </code></pre>
         </section>
         <section>
             <h2>Arrays</h2>
             <p>Arrays are ordered lists of values. Example:</p>
-            <pre><code>var fruits = ["Apple", "Banana", "Cherry"];</code></pre>
+            <pre><code>
+var fruits = ["Apple", "Banana", "Cherry"];
+            </code></pre>
         </section>
         <section>
             <h2>DOM Manipulation</h2>
             <p>The Document Object Model (DOM) represents the structure of a web page. JavaScript can be used to manipulate the DOM. Example:</p>
-            <pre><code>document.getElementById("myElement").innerHTML = "New Content";</code></pre>
+            <pre><code>
+document.getElementById("myElement").innerHTML = "New Content";
+            </code></pre>
         </section>
         <section>
-            <h2>Local Storage</h2>
-            <p>It is like a built in storage in the web browser. This means users can leave a site or turn off their computer and
-                come back the next day and the data will still be there if not cleared
-                by user. Some basic functions are listed below</p>
-                <li>
-                    <ul>localStorage.setItem(key, value)</ul>
-                    <ul>localStorage.getItem(key)</ul>
-                    <ul>localStorage.getItem(key)</ul>
-                    <ul>localStorage.clear</ul>
-                </li>
-                <pre><code>localStorage.setItem("user","student");
-                localStorage.setItem("pwd","student123");</code></pre>
-                <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
-    </main>
+            <h2>Examples</h2>
+            <h3>Style Images</h3>
+            <p>This function styles all PNG images on the page:</p>
+            <pre><code>
+function styleImages() {
+    document.querySelectorAll("img[src$='.png']").forEach(x => {
+        x.style.height = "9px";
+        x.style.width = "9px";
+        x.style.border = "5px solid grey";
+    });
+}
+            </code></pre>
+            <h3>DOM Selection</h3>
+            <p>These functions manipulate elements selected by class and tag name:</p>
+            <pre><code>
+function jsSelector() {
+    var head = document.querySelector(".head");
+    head.style.background = "red";
+}
+
+function jsSelectors() {
+    document.querySelectorAll("h1").forEach(x => {
+        x.style.color = 'red';
+        x.innerHTML = "<i>Use of QuerySelectorAll</i>";
+    });
+}
+            </code></pre>
+            <section>
+                <h2>Local Storage</h2>
+                <p>It is like a built in storage in the web browser. This means users can leave a site or turn off their computer and
+                    come back the next day and the data will still be there if not cleared
+                    by user. Some basic functions are listed below</p>
+                    <li>
+                        <ul>localStorage.setItem(key, value)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.clear</ul>
+                    </li>
+                    <pre><code>localStorage.setItem("user","student");
+                    localStorage.setItem("pwd","student123");</code></pre>
+                    <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
     <footer>
         <p>&copy; 2024 JavaScript Course Summary</p>
     </footer>
