@@ -73,63 +73,31 @@ function manageStorage()
             result.innerHTML="Login failed";
             result.innerHTML='User Name : ${user} and password : ${pwd}';
 
-        }    
-
-}
-
-
-
-        </script>
-        <!--JS SELECTOR -->
-    
-    
-        <button onclick="jsSelector()">jsSelector</button>
-        <button onclick="jsSelectors()">jsSelectors</button>
-
+        }   
         
-        <h1>jsSelector</h1>
-
-        <h1 class="head">jsSelector</h1>
-
-           
-
-    <!--Image-->
-    <button onclick="styleImages()">Style Images</button>
-        <img src="./DISCIPLINE.png" alt="h"><!--Put an Image-->
-        
-    
-
-    <!--Login form--> 
-        <form action="" onsubmit="return false">
-            <input type="text" id="user" placeholder="User Name">
-            <input type="password" id="pwd" placeholder="Password">
-            <input type="submit" value="Login" onclick="manageStorage()">
-
-        </form>
-       
-        <h1 id="result"></h1>
-        
-        <section>
-            <h2>Data Types and Variables</h2>
-            <p>JavaScript supports various data types including:</p>
-            <ul>
-                <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
-                <li><strong>Number:</strong> Numeric data. Example: <code>let age = 30;</code></li>
-                <li><strong>Boolean:</strong> True or false. Example: <code>let isStudent = true;</code></li>
-                <li><strong>Object:</strong> Collections of key-value pairs. Example: <code>let person = {name: "John", age: 30};</code></li>
-                <li><strong>Array:</strong> Ordered lists of values. Example: <code>let fruits = ["Apple", "Banana", "Cherry"];</code></li>
-            </ul>
-            <p>Example:</p>
-            <pre><code>
+function showDetailsSelector(){
+            var displayArea = document.getElementById("displayArea");
+            var sectionContent = `
+                <section>
+                    <h2>Data Types and Variables</h2>
+                    <p>JavaScript supports data types including:</p>
+                    <ul>
+                        <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
+                        <li><strong>Number:</strong> Numeric data. Example: <code>let age = 30;</code></li>
+                        <li><strong>Boolean:</strong> True or false. Example: <code>let isStudent = true;</code></li>
+                        <li><strong>Object:</strong> Collections of key-value pairs. Example: <code>let person = {name: "John", age: 30};</code></li>
+                        <li><strong>Array:</strong> Ordered lists of values. Example: <code>let fruits = ["Apple", "Banana", "Cherry"];</code></li>
+                    </ul>
+                    <p>Example:</p>
+                    <pre><code>
 var x = 100;
 alert("The datatype of x: " + typeof(x));
 x = "Sheridan College";
 alert("The datatype of x: " + typeof(x));
 x = true;
 alert("The datatype of x: " + typeof(x));
-            </code></pre>
-        </section>
-        <section>
+                    </code></pre>
+                </section><section>
             <h2>Control Constructs</h2>
             <p>JavaScript provides several control constructs for flow control:</p>
             <ul>
@@ -225,6 +193,50 @@ function jsSelectors() {
                     <pre><code>localStorage.setItem("user","student");
                     localStorage.setItem("pwd","student123");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
+            `;
+            displayArea.innerHTML = sectionContent;
+        }
+
+        // Add event listener to the "details" button
+        document.getElementById("detailsButton").addEventListener("click", showDetails);
+
+}
+
+
+
+        </script>
+        <!--JS SELECTOR -->
+    
+    
+        <button onclick="jsSelector()">jsSelector</button>
+        <button onclick="jsSelectors()">jsSelectors</button>
+
+        
+        <h1>jsSelector</h1>
+
+        <h1 class="head">jsSelector</h1>
+        <h1 id="selector1"></h1>
+
+           
+
+    <!--Image-->
+    <button onclick="styleImages()">Style Images</button>
+        <img src="./DISCIPLINE.png" alt="h"><!--Put an Image-->
+        
+    
+
+    <!--Login form--> 
+        <form action="" onsubmit="return false">
+            <input type="text" id="user" placeholder="User Name">
+            <input type="password" id="pwd" placeholder="Password">
+            <input type="submit" value="Login" onclick="manageStorage()">
+
+        </form>
+       
+        <h1 id="result"></h1>
+        
+        
+        
 
                     
     <footer>
