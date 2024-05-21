@@ -42,9 +42,18 @@ alert("The datatype of x: " + typeof(x));
             <h2>Control Constructs</h2>
             <p>JavaScript provides several control constructs for flow control:</p>
             <ul>
-                <li><strong>If-Else:</strong> Conditional statements.</li>
-                <li><strong>For Loop:</strong> Iterates over a block of code a number of times.</li>
-                <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.</li>
+                <li><strong>If-Else:</strong> Conditional statements.</li><pre><code>if (hour < 18) {
+                    greeting = "Good day";
+                  } else {
+                    greeting = "Good evening";
+                  }</code></pre>
+                <li><strong>For Loop:</strong> Iterates over a block of code a number of times.</li><pre><code>for (let i = 0; i < 5; i++) {
+                    text += "The number is " + i + "<br>";
+                  }</code></pre>
+                <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.</li><pre><code>while (i < 10) {
+                    text += "The number is " + i;
+                    i++;
+                  }</code></pre>
             </ul>
         </section>
         <section>
@@ -116,12 +125,12 @@ function jsSelectors() {
                 <p>It is like a built in storage in the web browser. This means users can leave a site or turn off their computer and
                     come back the next day and the data will still be there if not cleared
                     by user. Some basic functions are listed below</p>
-                    <li>
-                        <ul>localStorage.setItem(key, value)</ul>
-                        <ul>localStorage.getItem(key)</ul>
-                        <ul>localStorage.getItem(key)</ul>
-                        <ul>localStorage.clear</ul>
-                    </li>
+                    <ul>
+                        <li>localStorage.setItem(key, value)</li>
+                        <li>localStorage.getItem(key)</li>
+                        <li>localStorage.getItem(key)</li>
+                        <li>localStorage.clear</li>
+                    </ul>
                     <pre><code>localStorage.setItem("user","student");
                     localStorage.setItem("pwd","student123");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
