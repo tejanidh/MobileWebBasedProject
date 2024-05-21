@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Topics</title>
     <link rel="stylesheet" href="./javascript.css">
-   
 </head>
 <body>
     <header>
@@ -18,100 +17,41 @@
         </nav>
     </header>
     <main>
-        <script>
-            function jsSelector()
-{
-    var head=document.querySelector("h1");
-    head.style.background="red";
-}
-function jsSelectors()
-{
-    var heads=document.querySelectorAll("h1").forEach(x=>{x.style.color='red'});
-}
-function jsClassSelector()
-{ 
-    var heads=document.querySelectorAll("heads");
+        <button onclick="displayContent()">Display</button>
 
-    for(let head of heads)
-        {
-        head.innerHTML="<i>Use of QuerySelectorAll</i>";//innerHTML actuall read the whatever is in it the " "
-        head.innerTEXT="<i>Use of QuerySelectorAll</i>";//innerTEXT actuall read the whatever is in it the " " and pastes it in the output usefull for displaying the code.
+        <h1 id="result"></h1>
+        
+        <div id="displayArea"></div>
 
-        }  
-}
-function styleImages(){
-    document.querySelectorAll("img[src$='.png']").forEach(x=>
-    {
-    x.style.height="9px";
-    x.style.width="9px";
-    x.style.border="5px solid grey";
-
-
-    })
-}
-
-function manageStorage()
-{
-    localStorage.setItem("user","StuM");
-    localStorage.setItem("pwd","StuM");
-
-    var userIn=document.getElementById("user").value;//form input
-    var passIn=document.getElementById("pwd").value;//form input
-    var user=localStorage.getItem("user");//local storage
-    var pwd=localStorage.getItem("pwd");//local stogare
-    var result=document.getElementById("result");// output area
-    if(userIn==user && passIn==pwd)
-        {   
-            result.classList.add('success');
-            result.innerHTML="Login Successful";    
-            result.innerHTML="User Name : ${user} and password : ${pwd}";
-
-        }
-    else
-        {  
-            result.classList.add('fail');
-            result.innerHTML="Login failed";
-            result.innerHTML='User Name : ${user} and password : ${pwd}';
-
-        }    
-
-}
-
-
-
-        </script>
-        <!--JS SELECTOR -->
-    
-    
         <button onclick="jsSelector()">jsSelector</button>
         <button onclick="jsSelectors()">jsSelectors</button>
-        <button onclick="jsClassSelector()">jsClassSelector</button>
 
-        
         <h1>jsSelector</h1>
-
         <h1 class="head">jsSelector</h1>
+        <h1 id="selector1"></h1>
 
-           
+        <button onclick="styleImages()">Style Images</button>
+        <img src="./DISCIPLINE.png" alt="h">
 
-    <!--Image-->
-    <button onclick="styleImages()">Style Images</button>
-        <img src="./DISCIPLINE.png" alt="h"><!--Put an Image-->
-        
-    
-
-    <!--Login form--> 
         <form action="" onsubmit="return false">
             <input type="text" id="user" placeholder="User Name">
             <input type="password" id="pwd" placeholder="Password">
             <input type="submit" value="Login" onclick="manageStorage()">
-
         </form>
        
         <h1 id="result"></h1>
-        
-        <section>
-            <h2>Data Types and Variables</h2>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 JavaScript Course Summary</p>
+    </footer> 
+
+    <script>
+        function displayContent() {
+            var displayArea = document.getElementById("displayArea");
+            var sectionContent = `
+                <section>
+                    <h2>Data Types and Variables</h2>
             <p>JavaScript supports various data types including:</p>
             <ul>
                 <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
@@ -126,8 +66,7 @@ var x = 100;
 alert("The datatype of x: " + typeof(x));
 x = "Sheridan College";
 alert("The datatype of x: " + typeof(x));
-x = true;
-alert("The datatype of x: " + typeof(x));
+
             </code></pre>
         </section>
         <section>
@@ -214,13 +153,55 @@ function jsSelectors() {
                         <ul>localStorage.getItem(key)</ul>
                         <ul>localStorage.clear</ul>
                     </li>
-                    <pre><code>localStorage.setItem("user","student");
-                    localStorage.setItem("pwd","student123");</code></pre>
+                    <pre><code>localStorage.setItem("user","StudM");
+                    localStorage.setItem("pwd","StudM");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
+            </section>
+            `;
+            displayArea.innerHTML = sectionContent;
+        }
 
-                    
-    <footer>
-        <p>&copy; 2024 JavaScript Course Summary</p>
-    </footer> 
+        function jsSelector() {
+            var head = document.querySelector("h1");
+            head.style.background = "red";
+        }
+
+        function jsSelectors() {
+            var heads = document.querySelectorAll("h1");
+            heads.forEach(head => {
+                head.style.color = 'red';
+                head.innerHTML = "<i>Use of QuerySelectorAll</i>";
+            });
+        }
+
+        function styleImages() {
+            document.querySelectorAll("img[src$='.png']").forEach(img => {
+                img.style.height = "9px";
+                img.style.width = "9px";
+                img.style.border = "5px solid grey";
+            });
+        }
+
+        function manageStorage() {
+            localStorage.setItem("user", "StuM");
+            localStorage.setItem("pwd", "StuM");
+
+            var userIn = document.getElementById("user").value;
+            var passIn = document.getElementById("pwd").value;
+            var user = localStorage.getItem("user");
+            var pwd = localStorage.getItem("pwd");
+            var result = document.getElementById("result");
+
+            if (userIn === user && passIn === pwd) {
+                result.classList.add('success');
+                result.innerHTML = "Login Successful";    
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            } else {  
+                result.classList.add('fail');
+                result.innerHTML = "Login failed";
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            }
+        }
+    </script>
 </body>
 </html>
