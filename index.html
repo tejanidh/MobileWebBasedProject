@@ -1,20 +1,3 @@
-<!--
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body class="w-100">
-    <div class="w-30"></div>
-    <div class="w-70"></div>
-</body>
-</html>
-<!DOCTYPE html>
-
--->
 
 <html lang="en">
   <head>
@@ -23,27 +6,89 @@
     <title>Course Summary Website</title>
     <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
-    <header>
-      <h1>Welcome to JavaScript Course Summary</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="javascript.html">JavaScript Topics</a></li>
-        </ul>
+  <body class="w-100 bg-f0f0f0 padding-0 margin-0">
+    <header class="display-flex h-30">
+      <div class="w-25 h-100">
+        <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
+      </div>
+      <div class="w-75 text-align-center">
+        <h1>Welcome to JavaScript Course Summary</h1>
+        <nav class="w-50">
+            <div class="display-flex w-100 ">
+              <a href="index.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-5 " id="menu-1">Home</a>
+              <a href="javascript.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JavaScript</a>
+              <a href="" class=" menu w-15 border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-3">JQuery</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2   padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-4">Ajax</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-5">Contact</a>
+            </div>
       </nav>
+      </div>
+      
     </header>
-    <main>
-      <section>
-        <h2>About This Course</h2>
-        <p>
+<!-- <header id="header" class="w-100">
+   // <object type="text/html" data="header.html" class="w-100"></object>
+</header> -->
+    <main class="w-100">
+      
+      <section class="display-flex">
+        <div class="w-25">
+          <div class="w-100 align-content-center display-inline-grid padding-2"><p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
+            <nav class="margin-left-2 display-inline-grid" >
+              <a href="#conductBy" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Conduct By</p></a>
+            <a href="#lectureTiming" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Lecture Timing</p></a>
+            <a href="#objectives" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Learning Outcome</p></a>
+            <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">About the Course</p></a>
+            </nav>
+            
+          <br>
+
+          </div>
+        </div>
+        <div class="w-75 padding-left-1">
+          <div id="conductBy">
+            
+            <h2>Conduct By/Professor</h2>
+            <div class="padding-left-5">
+              <p class="font-weight-semibold fs-3">Prem Parashar</p>
+             <p >A very good professor for web related and designing related subjects. He is very Cool and Calm by nature. and also in terms of talking with Students.</p>
+            </div>
+            
+          </div>
+          
+          <div id="lectureTiming">
+            <h2>Lecture Timing</h2>
+            <p>Lectures are mostly divided in half sections. first 1 Hour is for theory knowledge. and remaning 2 Hours are alloted for practicals. There is only 1 Lecture in a week.</p>
+            <ol type="I">
+              <li>Monday - 08:00 - 11:00</li>
+            </ol>
+          </div>
+          
+          <div id="objectives">
+            <h2>Learning Outcome</h2>
+            <div>
+              <ol type="I">
+                <li>Define the mobile ecosystem.</li>
+                <li>Summarize advanced JavaScript concepts.</li>
+                <li>Complete software and system setup.</li>
+                <li>Define front-end web application platform.</li>
+                <li>Implement UI principles within the front-end web application platform.</li>
+                <li>Produce interactive mobile applications with front-end platform guidelines.</li>
+              </ol>
+            </div>
+          </div>
+          <div id="aboutTheCourse">
+            <h2>About The Course</h2>
+          <p>
           This course covers the fundamentals of JavaScript, including data
           types, control constructs, functions, objects, arrays, and DOM
           manipulation. By the end of this course, you will have a comprehensive
           understanding of JavaScript and its capabilities.
         </p>
+            
+          </div>
+        
       </section>
-      <section>
+      <!-- <section>
         <h2>Topics Covered</h2>
         <ul>
           <li>Data Types</li>
@@ -53,12 +98,14 @@
           <li>Arrays</li>
           <li>DOM Manipulation</li>
         </ul>
-      </section>
+      </section> -->
+        </div>
+        
     </main>
-    <footer>
-      <p>&copy; 2024 JavaScript Course Summary</p>
+    <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1">
+      <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
     </footer>
   </body>
 </html>
 
-012 12345
+<script src="./main.js"></script>

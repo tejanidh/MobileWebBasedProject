@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Topics</title>
-    <link rel="stylesheet" href="javascript.css">
+    <link rel="stylesheet" href="./javascript.css">
    
 </head>
 <body>
@@ -18,6 +18,97 @@
         </nav>
     </header>
     <main>
+        <script>
+            function jsSelector()
+{
+    var head=document.querySelector("h1");
+    head.style.background="red";
+}
+function jsSelectors()
+{
+    var heads=document.querySelectorAll("h1").forEach(x=>{x.style.color='red'});
+}
+function jsClassSelector()
+{ 
+    var heads=document.getElementById("heads");
+
+    for(let head of heads)
+        {
+        head.innerHTML="<i>Use of QuerySelectorAll</i>";//innerHTML actuall read the whatever is in it the " "
+        head.innerTEXT="<i>Use of QuerySelectorAll</i>";//innerTEXT actuall read the whatever is in it the " " and pastes it in the output usefull for displaying the code.
+
+        }  
+}
+function styleImages(){
+    document.querySelectorAll("img[src$='.png']").forEach(x=>
+    {
+    x.style.height="9px";
+    x.style.width="9px";
+    x.style.border="5px solid grey";
+
+
+    })
+}
+
+function manageStorage()
+{
+    localStorage.setItem("user","StuM");
+    localStorage.setItem("pwd","StuM");
+
+    var userIn=document.getElementById("user").value;//form input
+    var passIn=document.getElementById("pwd").value;//form input
+    var user=localStorage.getItem("user");//local storage
+    var pwd=localStorage.getItem("pwd");//local stogare
+    var result=document.getElementById("result");// output area
+    if(userIn==user && passIn==pwd)
+        {   
+            result.classList.add('success');
+            result.innerHTML="Login Successful";    
+            result.innerHTML="User Name : ${user} and password : ${pwd}";
+
+        }
+    else
+        {  
+            result.classList.add('fail');
+            result.innerHTML="Login failed";
+            result.innerHTML='User Name : ${user} and password : ${pwd}';
+
+        }    
+
+}
+
+
+
+        </script>
+        <!--JS SELECTOR -->
+    
+    
+        <button onclick="jsSelector()">jsSelector</button>
+        <button onclick="jsSelectors()">jsSelectors</button>
+
+        
+        <h1>jsSelector</h1>
+
+        <h1 class="head">jsSelector</h1>
+
+           
+
+    <!--Image-->
+    <button onclick="styleImages()">Style Images</button>
+        <img src="./DISCIPLINE.png" alt="h"><!--Put an Image-->
+        
+    
+
+    <!--Login form--> 
+        <form action="" onsubmit="return false">
+            <input type="text" id="user" placeholder="User Name">
+            <input type="password" id="pwd" placeholder="Password">
+            <input type="submit" value="Login" onclick="manageStorage()">
+
+        </form>
+       
+        <h1 id="result"></h1>
+        
         <section>
             <h2>Data Types and Variables</h2>
             <p>JavaScript supports various data types including:</p>
@@ -134,8 +225,10 @@ function jsSelectors() {
                     <pre><code>localStorage.setItem("user","student");
                     localStorage.setItem("pwd","student123");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
+
+                    
     <footer>
         <p>&copy; 2024 JavaScript Course Summary</p>
-    </footer>
+    </footer> 
 </body>
 </html>
