@@ -11,6 +11,7 @@
     --gray-800: #343a40;
     --gray-900: #212529;
     --black:    #000;
+    --blue: #0d6efd;
     
 }
 .h-8 {height: 8% !important;}
@@ -70,14 +71,14 @@
 .fs-6 {font-size: 1rem;}
 
 
-.text-primary{ color:        var(--blue)};
-.text-secondary{ color:      var(--gray-600)};
-.text-success{ color:        var(--green)};
-.text-info{ color:           var(--cyan)};
-.text-warning{ color:        var(--yellow)};
-.text-danger{ color:         var(--red)};
-.text-light{ color:          var(--gray-100)};
-.text-dark{ color:           var(--gray-900)};
+.text-primary{ color:        var(--blue);}
+.text-secondary{ color:      var(--gray-600);}
+.text-success{ color:        var(--green);}
+.text-info{ color:           var(--cyan);}
+.text-warning{ color:        var(--yellow);}
+.text-danger{ color:         var(--red);}
+.text-light{ color:          var(--gray-100);}
+.text-dark{ color:           var(--gray-900);}
 
 .border-radius{ border-radius:               .375rem;}
 .border-radius-sm{ border-radius:             .25rem;}
@@ -334,3 +335,16 @@ textarea {
 .bg-f0f0f0 {
     background-color: #f0f0f0;
 }
+
+.bg-black {background-color: #000;}
+
+button {
+    color: var(--blue);
+    border-radius: 25%;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+padding-left: 2%;
+padding-right: 2%;
+ }
+
+ body {font-family: Arial, sans-serif;}

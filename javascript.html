@@ -17,7 +17,9 @@
             </ul>
         </nav>
     </header>
+    
     <main>
+<<<<<<< HEAD
         <script>
             function jsSelector()
 {
@@ -225,10 +227,52 @@ function jsSelectors() {
                     <pre><code>localStorage.setItem("user","student");
                     localStorage.setItem("pwd","student123");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
+            </section>
+            `;
+            displayArea.innerHTML = sectionContent;
+        }
 
-                    
-    <footer>
-        <p>&copy; 2024 JavaScript Course Summary</p>
-    </footer> 
+        function jsSelector() {
+            var head = document.querySelector("h1");
+            head.style.background = "red";
+        }
+
+        function jsSelectors() {
+            var heads = document.querySelectorAll("h1");
+            heads.forEach(head => {
+                head.style.color = 'red';
+                head.innerHTML = "<i>Use of QuerySelectorAll</i>";
+            });
+        }
+
+        function styleImages() {
+            document.querySelectorAll("img[src$='.png']").forEach(img => {
+                img.style.height = "9px";
+                img.style.width = "9px";
+                img.style.border = "5px solid grey";
+            });
+        }
+
+        function manageStorage() {
+            localStorage.setItem("user", "StuM");
+            localStorage.setItem("pwd", "StuM");
+
+            var userIn = document.getElementById("user").value;
+            var passIn = document.getElementById("pwd").value;
+            var user = localStorage.getItem("user");
+            var pwd = localStorage.getItem("pwd");
+            var result = document.getElementById("result");
+
+            if (userIn === user && passIn === pwd) {
+                result.classList.add('success');
+                result.innerHTML = "Login Successful";    
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            } else {  
+                result.classList.add('fail');
+                result.innerHTML = "Login failed";
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            }
+        }
+    </script>
 </body>
 </html>
