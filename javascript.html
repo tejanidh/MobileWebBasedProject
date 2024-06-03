@@ -1,118 +1,69 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Topics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Summary Website</title>
+    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="./javascript.css">
-   
-</head>
-<body>
-    <header>
-        <h1>JavaScript Topics</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript.html">JavaScript Topics</a></li>
-            </ul>
-        </nav>
+  </head>
+  <body class="w-100 bg-f0f0f0 padding-0 margin-0">
+    <header class="display-flex h-30">
+      <div class="w-25 h-100">
+        <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
+      </div>
+      <div class="w-75 text-align-center">
+        <h1>Welcome to JavaScript Course Summary</h1>
+        <nav class="w-50">
+            <div class="display-flex w-100 ">
+              <a href="index.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-5 " id="menu-1">Home</a>
+              <a href="javascript.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JavaScript</a>
+              <a href="jselectors.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JSelectors</a>
+              <a href="" class=" menu w-15 border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-3">JQuery</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2   padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-4">Ajax</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-5">Contact</a>
+            </div>
+      </nav>
+      </div>
+      
     </header>
     
     <main>
-<<<<<<< HEAD
-        <script>
-            function jsSelector()
-{
-    var head=document.querySelector("h1");
-    head.style.background="red";
-}
-function jsSelectors()
-{
-    var heads=document.querySelectorAll("h1").forEach(x=>{x.style.color='red'});
-}
-function jsClassSelector()
-{ 
-    var heads=document.getElementById("heads");
+        <button onclick="displayContent()" class="fs-3">Display</button>
 
-    for(let head of heads)
-        {
-        head.innerHTML="<i>Use of QuerySelectorAll</i>";//innerHTML actuall read the whatever is in it the " "
-        head.innerTEXT="<i>Use of QuerySelectorAll</i>";//innerTEXT actuall read the whatever is in it the " " and pastes it in the output usefull for displaying the code.
-
-        }  
-}
-function styleImages(){
-    document.querySelectorAll("img[src$='.png']").forEach(x=>
-    {
-    x.style.height="9px";
-    x.style.width="9px";
-    x.style.border="5px solid grey";
-
-
-    })
-}
-
-function manageStorage()
-{
-    localStorage.setItem("user","StuM");
-    localStorage.setItem("pwd","StuM");
-
-    var userIn=document.getElementById("user").value;//form input
-    var passIn=document.getElementById("pwd").value;//form input
-    var user=localStorage.getItem("user");//local storage
-    var pwd=localStorage.getItem("pwd");//local stogare
-    var result=document.getElementById("result");// output area
-    if(userIn==user && passIn==pwd)
-        {   
-            result.classList.add('success');
-            result.innerHTML="Login Successful";    
-            result.innerHTML=`User Name : ${user} and password : ${pwd}`;
-
-        }
-    else
-        {  
-            result.classList.add('fail');
-            result.innerHTML="Login failed";
-            result.innerHTML=`User Name : ${user} and password : ${pwd}`;
-
-        }    
-
-}
-
-
-
-        </script>
-        <!--JS SELECTOR -->
-    
-    
-        <button onclick="jsSelector()">jsSelector</button>
-        <button onclick="jsSelectors()">jsSelectors</button>
-
+        <h1 id="result"></h1>
         
+        <div id="displayArea"></div>
+
+        <button onclick="jsSelector()" class="fs-3">jsSelector</button>
+        <button onclick="jsSelectors()" class="fs-3">jsSelectors</button>
+
         <h1>jsSelector</h1>
-
         <h1 class="head">jsSelector</h1>
+        <h1 id="selector1"></h1>
 
-           
+        <button onclick="styleImages()"  class="fs-3">Style Images</button>
+        <br>
+        <img src="./DISCIPLINE.png" alt="h">
 
-    <!--Image-->
-    <button onclick="styleImages()">Style Images</button>
-        <img src="./DISCIPLINE.png" alt="h"><!--Put an Image-->
-        
-    
-
-    <!--Login form--> 
         <form action="" onsubmit="return false">
             <input type="text" id="user" placeholder="User Name">
             <input type="password" id="pwd" placeholder="Password">
             <input type="submit" value="Login" onclick="manageStorage()">
-
         </form>
        
         <h1 id="result"></h1>
-        
-        <section>
-            <h2>Data Types and Variables</h2>
+    </main>
+    
+    <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
+        <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
+      </footer>
+
+    <script>
+        function displayContent() {
+            var displayArea = document.getElementById("displayArea");
+            var sectionContent = `
+                <section>
+                    <h2>Data Types and Variables</h2>
             <p>JavaScript supports various data types including:</p>
             <ul>
                 <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
@@ -127,26 +78,16 @@ var x = 100;
 alert("The datatype of x: " + typeof(x));
 x = "Sheridan College";
 alert("The datatype of x: " + typeof(x));
-x = true;
-alert("The datatype of x: " + typeof(x));
+
             </code></pre>
         </section>
         <section>
             <h2>Control Constructs</h2>
             <p>JavaScript provides several control constructs for flow control:</p>
             <ul>
-                <li><strong>If-Else:</strong> Conditional statements.</li><pre><code>if (hour < 18) {
-                    greeting = "Good day";
-                  } else {
-                    greeting = "Good evening";
-                  }</code></pre>
-                <li><strong>For Loop:</strong> Iterates over a block of code a number of times.</li><pre><code>for (let i = 0; i < 5; i++) {
-                    text += "The number is " + i + "<br>";
-                  }</code></pre>
-                <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.</li><pre><code>while (i < 10) {
-                    text += "The number is " + i;
-                    i++;
-                  }</code></pre>
+                <li><strong>If-Else:</strong> Conditional statements.</li>
+                <li><strong>For Loop:</strong> Iterates over a block of code a number of times.</li>
+                <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.</li>
             </ul>
         </section>
         <section>
@@ -218,14 +159,14 @@ function jsSelectors() {
                 <p>It is like a built in storage in the web browser. This means users can leave a site or turn off their computer and
                     come back the next day and the data will still be there if not cleared
                     by user. Some basic functions are listed below</p>
-                    <ul>
-                        <li>localStorage.setItem(key, value)</li>
-                        <li>localStorage.getItem(key)</li>
-                        <li>localStorage.getItem(key)</li>
-                        <li>localStorage.clear</li>
-                    </ul>
-                    <pre><code>localStorage.setItem("user","student");
-                    localStorage.setItem("pwd","student123");</code></pre>
+                    <li>
+                        <ul>localStorage.setItem(key, value)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.clear</ul>
+                    </li>
+                    <pre><code>localStorage.setItem("user","StudM");
+                    localStorage.setItem("pwd","StudM");</code></pre>
                     <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
             </section>
             `;
