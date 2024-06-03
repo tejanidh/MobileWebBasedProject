@@ -37,9 +37,6 @@
                 <a href="#objectives" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Learning Outcome</p></a>
                 <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">About the Course</p></a>
                 </nav>
-                
-              <br>
-    
               </div>
             </div>
             <div class="w-75 padding-left-1">
@@ -56,7 +53,7 @@
                 <h2>Select by Id</h2>
                 <div class="padding-left-5">
                   <p id="t1">For this, we have one function called <b>document.getElementById("ID_name")</b>. This function is connected to whole html page. and whole HTML page is considered as a document. This function is used to select any tag by using id. So, it selects only one tag at a time. </p>
-                  <p id="t2">Let's take an example. This section is linked with quick links section. if you will click it from there or else if you will select from this below button this section whole words case will be changed.</p>
+                  <p id="t2">Let's take an example. This section is linked with quick links section. if you will click it from this below button this section whole words case will be changed.</p>
                   <button id="getElementById_capital">Let's make it capital font</button>
                   <button id="getElementById_lower">Let's make it Lower case Font</button>
                   <p class="fs-4 font-weight-bold">Example:</p>
@@ -73,7 +70,25 @@
                     </code>
                   </pre>
                 </div>
+
+
+                <div id="attributeValue">
                 
+                    <h2>Work with attribute value</h2>
+                    <div class="padding-left-5">
+                      <p id="t1">For this, we have one attribute called value. That mainly comes in use with text box and text area. wherever any data related things occurs we can use this attribute to perform some action using javascript. 
+                        There are sorts of query selector, by using that you can directly use attribute value. <b>document.getElementById("ID_name").value</b>. This function is connected to whole html page. and whole HTML page is considered as a document. This function is used to select any tag by using id. So, it selects only one tag at a time. </p>
+                      <p id="t2">Let's take an example. This section is linked with quick links section. if you will enter data in below textbox, then data in below label will change.</p>
+                      <input type="text" name="enter data" id="txt_check"><br>
+                      <label for="data" id="txt_check_show"></label>
+                      <p class="fs-4 font-weight-bold">Example:</p>
+                
+                      <pre>
+                        <code>
+                            var t1 = document.getElementById("txt_check").value;
+                        </code>
+                      </pre>
+                    </div>
               </div>
           </section>
     </main>
@@ -97,6 +112,10 @@
         t1 = t1.toLocaleLowerCase();
         document.getElementById("t1").innerHTML = t1;
     
+    });
+    document.getElementById("txt_check").addEventListener("change",function(e) {
+        var t1 = document.getElementById("txt_check").value;
+        document.getElementById("txt_check_show").innerText = t1;
     });
    
 </script>
