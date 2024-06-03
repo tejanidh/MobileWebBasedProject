@@ -1,161 +1,196 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Summary Website</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="./selectors.css">
-    
-  </head>
-  <body class="w-100 bg-f0f0f0 padding-0 margin-0">
-    <header class="display-flex h-30">
-      <div class="w-25 h-100">
-        <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
-      </div>
-      <div class="w-75 text-align-center">
-        <h1>Welcome to JavaScript Course Summary</h1>
-        <nav class="w-50">
-            <div class="display-flex w-100 ">
-              <a href="index.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-5 " id="menu-1">Home</a>
-              <a href="javascript.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JavaScript</a>
-              <a href="jselectors.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JSelectors</a>
-              <a href="" class=" menu w-15 border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-3">JQuery</a>
-              <a href="" class="w-15 menu border-radius-xxl border-2   padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-4">Ajax</a>
-              <a href="" class="w-15 menu border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-5">Contact</a>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Summary Website</title>
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./selectors.css">
+</head>
+<body class="w-100 bg-f0f0f0 padding-0 margin-0">
+  <header class="display-flex h-30">
+    <div class="w-25 h-100">
+      <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
+    </div>
+    <div class="w-75 text-align-center">
+      <h1>Welcome to JavaScript Course Summary</h1>
+      <nav class="w-50">
+        <div class="display-flex w-100">
+          <a href="index.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-5" id="menu-1">Home</a>
+          <a href="javascript.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-2">JavaScript</a>
+          <a href="jselectors.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-2">JSelectors</a>
+          <a href="" class="menu w-15 border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-3">JQuery</a>
+          <a href="" class="w-15 menu border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-4">Ajax</a>
+          <a href="" class="w-15 menu border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-5">Contact</a>
+        </div>
       </nav>
+    </div>
+  </header>
+
+  <main class="w-100">
+    <section class="display-flex">
+      <div class="w-25">
+        <div class="w-100 align-content-center display-inline-grid padding-2">
+          <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
+          <nav class="margin-left-2 display-inline-grid">
+            <a href="#getElementById" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Id</p>
+            </a>
+            <a href="#attributeValue" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Attribute Value</p>
+            </a>
+            <a href="#class_name" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Class Name</p>
+            </a>
+            <a href="#selectByTagName" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Tag Name</p>
+            </a>
+            <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">About the Course</p>
+            </a>
+          </nav>
+        </div>
       </div>
-      
-    </header>
-      `
-    <main class="w-100">
-        <section class="display-flex">
-            <div class="w-25">
-              <div class="w-100 align-content-center display-inline-grid padding-2"><p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
-                <nav class="margin-left-2 display-inline-grid" >
-                  <a href="#getElementById" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Select By Id</p></a>
-                <a href="#attributeValue" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Attribute Value</p></a>
-                <a href="#class_name" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">Select By Class Name</p></a>
-                <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10"><p class="fs-4 text-primary">About the Course</p></a>
-                </nav>
-              </div>
-            </div>
-            <div class="w-75 padding-left-1">
-                <div>
-                    <div class="display-ruby-text">
-                        <p class="fs-1">JSELECTORS</p>  
-                    </div>
-                    <p>In javascript, we have different types of selectos such as by tag, by classname, by tag name and so on. Let's catch it up.</p>
-                </div>
-                
+      <div class="w-75 padding-left-1">
+        <div>
+          <div class="display-ruby-text">
+            <p class="fs-1">JSELECTORS</p>
+          </div>
+          <p>In javascript, we have different types of selectors such as by tag, by classname, by tag name and so on. Let's catch it up.</p>
+        </div>
 
-              <div id="getElementById">
-                
-                <h2>Select by Id</h2>
-                <div class="padding-left-5">
-                  <p id="t1">For this, we have one function called <b>document.getElementById("ID_name")</b>. This function is connected to whole html page. and whole HTML page is considered as a document. This function is used to select any tag by using id. So, it selects only one tag at a time. </p>
-                  <p id="t2">Let's take an example. This section is linked with quick links section. if you will click it from this below button this section whole words case will be changed.</p>
-                  <button id="getElementById_capital">Let's make it capital font</button>
-                  <button id="getElementById_lower">Let's make it Lower case Font</button>
-                  <p class="fs-4 font-weight-bold">Example:</p>
-            
-                  <pre>
-                    <code>
-    var t1 = document.getElementById("t1").innerHTML;
-    t1 = t1.toLocaleUpperCase();
-    document.getElementById("t1").innerHTML = t1;
-    /*To make it to lower case*/
-    var t1 = document.getElementById("t1").innerHTML;
-    t1 = t1.toLocaleLowerCase();
-    document.getElementById("t1").innerHTML = t1;
-                    </code>
-                  </pre>
-                </div>
+        <div id="getElementById">
+          <h2>Select by Id</h2>
+          <div class="padding-left-5">
+            <p id="t1">For this, we have one function called <b>document.getElementById("ID_name")</b>. This function is connected to the whole HTML page, which is considered as a document. This function is used to select any tag by using an id. So, it selects only one tag at a time. </p>
+            <p id="t2">Let's take an example. This section is linked with the quick links section. if you will click it from this below button this section whole words case will be changed.</p>
+            <button id="getElementById_capital">Let's make it capital font</button>
+            <button id="getElementById_lower">Let's make it Lower case Font</button>
+            <p class="fs-4 font-weight-bold">Example:</p>
 
+            <pre>
+              <code>
+var t1 = document.getElementById("t1").innerHTML;
+t1 = t1.toLocaleUpperCase();
+document.getElementById("t1").innerHTML = t1;
+/*To make it to lower case*/
+var t1 = document.getElementById("t1").innerHTML;
+t1 = t1.toLocaleLowerCase();
+document.getElementById("t1").innerHTML = t1;
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div id="attributeValue">
-                
-                    <h2>Work with attribute value</h2>
-                    <div class="padding-left-5">
-                      <p id="t1">For this, we have one attribute called value. That mainly comes in use with text box and text area. wherever any data related things occurs we can use this attribute to perform some action using javascript. 
-                        There are sorts of query selector, by using that you can directly use attribute value. <b>document.getElementById("ID_name").value</b>. This function is connected to whole html page. and whole HTML page is considered as a document. This function is used to select any tag by using id. So, it selects only one tag at a time. </p>
-                      <p id="t2">Let's take an example. This section is linked with quick links section. if you will enter data in below textbox, then data in below label will change.</p>
-                      <input type="text" name="enter data" id="txt_check"><br>
-                      <label for="data" id="txt_check_show"></label>
-                      <p class="fs-4 font-weight-bold">Example:</p>
-                
-                      <pre>
-                        <code>
-                            var t1 = document.getElementById("txt_check").value;
-                        </code>
-                      </pre>
-                    </div>
-              </div>
-              <div id="class_name">
-                <h2>Select By Class name</h2>
-                <div>
-                  <p class="para">Well By clicking the below button this sentence is going to wrapped by a light blue bg color. Syntax: <b>document.getElementsByClassName(classname)</b></p>
-                  <p>
-                    The getElementsByClassName(className) method in JavaScript is used to select all HTML elements that have a specific class name.</p>
-                  <p class="para1">So what this basically does is that it takes the paragraph by Class name and changes the sentence background color since that is what the javascript file is coded to</p>
-                  <p>How? My first p tag has class name "para" and the rest of p tags have different class names and that is why it only changes the color of the first paragraph</p>
-                  <button id="hi">Click this button to change the bg color</button>
-                  <h4>Example:</h4>
-                  <pre><code>
-                    function className(){
-                      var p1 = document.getElementsByClassName("para");
+        <div id="attributeValue">
+          <h2>Work with attribute value</h2>
+          <div class="padding-left-5">
+            <p id="t1">For this, we have one attribute called value. That mainly comes in use with text box and text area. Wherever any data-related things occur, we can use this attribute to perform some action using JavaScript. There are sorts of query selectors, by using that you can directly use attribute value. <b>document.getElementById("ID_name").value</b>. This function is connected to the whole HTML page, which is considered as a document. This function is used to select any tag by using an id. So, it selects only one tag at a time.</p>
+            <p id="t2">Let's take an example. This section is linked with the quick links section. if you will enter data in the below textbox, then the data in the below label will change.</p>
+            <input type="text" name="enter data" id="txt_check"><br>
+            <label for="data" id="txt_check_show"></label>
+            <p class="fs-4 font-weight-bold">Example:</p>
 
+            <pre>
+              <code>
+var t1 = document.getElementById("txt_check").value;
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                      for(x of p1){
-                        x.style.backgroundColor = "lightblue";
-                      }
-                    }
-                
-                   </code></pre>
+        <div id="class_name">
+          <h2>Select By Class name</h2>
+          <div>
+            <p class="para">Well By clicking the below button this sentence is going to be wrapped by a light blue bg color. Syntax: <b>document.getElementsByClassName(classname)</b></p>
+            <p>The getElementsByClassName(className) method in JavaScript is used to select all HTML elements that have a specific class name.</p>
+            <p class="para1">So what this basically does is that it takes the paragraph by Class name and changes the sentence background color since that is what the javascript file is coded to</p>
+            <p>How? My first p tag has class name "para" and the rest of p tags have different class names and that is why it only changes the color of the first paragraph</p>
+            <button id="hi">Click this button to change the bg color</button>
+            <h4>Example:</h4>
+            <pre>
+              <code>
+function className(){
+  var p1 = document.getElementsByClassName("para");
 
-                  <p>So this code it takes the className of "para" paragraph and then 
-                    by using for loop we are changing the color to backgorund color to light blue.
-                  </p>
+  for(x of p1){
+    x.style.backgroundColor = "lightblue";
+  }
+}
+              </code>
+            </pre>
 
-                </div>
-              </div>
-          </section>
-    </main>
-    
-    <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
-        <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
-      </footer>
+            <p>So this code takes the className of "para" paragraph and then by using a for loop we are changing the color to background color to light blue.</p>
+          </div>
+        </div>
+
+        <div id="selectByTagName">
+          <h2>Select By Tag Name</h2>
+          <div class="padding-left-5">
+            <p>To select elements by their tag name, we use the <b>document.getElementsByTagName("tag_name")</b> method. This method returns a collection of all elements with the specified tag name. Let's see how it works.</p>
+            <p>For example, let's say we want to change the text color of all paragraph elements. We can do this by selecting all `p` tags and applying the style change.</p>
+            <button id="changeTextColor">Change Text Color</button>
+            <p class="example">This is a paragraph.</p>
+            <p class="example">This is another paragraph.</p>
+            <p class="example">Yet another paragraph here.</p>
+            <p class="fs-4 font-weight-bold">Example:</p>
+
+            <pre>
+              <code>
+function changeTextColor() {
+  var paragraphs = document.getElementsByTagName("p");
+
+  for (var i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "red";
+  }
+}
+
+document.getElementById("changeTextColor").onclick = changeTextColor;
+              </code>
+            </pre>
+            <p>In this code, we select all `p` elements and change their text color to red when the button is clicked.</p>
+          </div>
+        </div>
+
+        <div id="aboutTheCourse">
+          <h2>About the Course</h2>
+          <p>This course is designed to teach you the fundamentals of JavaScript, including working with the DOM, using different selectors, and manipulating HTML elements. By the end of this course, you'll have a solid understanding of how to use JavaScript to interact with web pages.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("getElementById_capital").onclick = function() {
+      var t1 = document.getElementById("t1").innerHTML;
+      t1 = t1.toLocaleUpperCase();
+      document.getElementById("t1").innerHTML = t1;
+    };
+
+    document.getElementById("getElementById_lower").onclick = function() {
+      var t1 = document.getElementById("t1").innerHTML;
+      t1 = t1.toLocaleLowerCase();
+      document.getElementById("t1").innerHTML = t1;
+    };
+
+    document.getElementById("txt_check").oninput = function() {
+      var t1 = document.getElementById("txt_check").value;
+      document.getElementById("txt_check_show").innerText = t1;
+    };
+
+    document.getElementById("hi").onclick = function() {
+      var elements = document.getElementsByClassName("para");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = "lightblue";
+      }
+    };
+
+    document.getElementById("changeTextColor").onclick = function() {
+      var paragraphs = document.getElementsByTagName("p");
+      for (var i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = "red";
+      }
+    };
+  </script>
 </body>
 </html>
-
-
-<script>  
-    document.getElementById("getElementById_capital").addEventListener("click",function(e) {
-        var t1 = document.getElementById("t1").innerHTML;
-        t1 = t1.toLocaleUpperCase();
-        document.getElementById("t1").innerHTML = t1;
-    
-    });
-    document.getElementById("getElementById_lower").addEventListener("click",function(e) {
-        var t1 = document.getElementById("t1").innerHTML;
-        t1 = t1.toLocaleLowerCase();
-        document.getElementById("t1").innerHTML = t1;
-    
-    });
-    document.getElementById("hi").addEventListener("click",function(e) {
-
-      var p1 = document.getElementsByClassName("para");
-
-
-    for(x of p1){
-      x.style.backgroundColor = "lightblue";
-    }
-    });
-
-       document.getElementById("txt_check").addEventListener("change",function(e) {
-        var t1 = document.getElementById("txt_check").value;
-        document.getElementById("txt_check_show").innerText = t1;
-    });
-
-   
-</script>
