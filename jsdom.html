@@ -70,6 +70,29 @@
             <ul id="taskList"></ul>
             <p class="fs-4 font-weight-bold">Example:</p>
             <p>
+
+              <!-- JavaScript Code -->
+                <h3>JavaScript Code:</h3>
+                <pre>
+                <code>
+                  // Function to add a new task
+                  function addTask() {
+                    const taskInput = document.getElementById("taskInput");
+                    const taskList = document.getElementById("taskList");
+                    const taskText = taskInput.value.trim();
+
+                    if (taskText !== "") {
+                      const newTask = document.createElement("li");
+                      newTask.textContent = taskText;
+
+                      taskList.appendChild(newTask);
+                      taskInput.value = "";
+                    } else {
+                      alert("Please enter a task!");
+                    }
+                  }
+                </code>
+                </pre>
               <h2>Code Explanation</h2>
               <ul>
                 <li>An input field allows users to add new tasks, which are displayed as list items within an unordered list.</li><br>
@@ -129,30 +152,6 @@
 
               </ul>
             </p>
-
-<!-- JavaScript Code -->
-<h3>JavaScript Code:</h3>
-<pre>
-<code>
-  // Function to add a new task
-  function addTask() {
-    const taskInput = document.getElementById("taskInput");
-    const taskList = document.getElementById("taskList");
-    const taskText = taskInput.value.trim();
-
-    if (taskText !== "") {
-      const newTask = document.createElement("li");
-      newTask.textContent = taskText;
-
-      taskList.appendChild(newTask);
-      taskInput.value = "";
-    } else {
-      alert("Please enter a task!");
-    }
-  }
-</code>
-</pre>
-
           </div>
         </div>
 <div>
