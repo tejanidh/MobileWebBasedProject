@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Summary Website</title>
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./dom.css">
+</head>
+<body class="w-100 bg-f0f0f0 padding-0 margin-0">
+  <header class="display-flex h-30">
+    <div class="w-25 h-100">
+      <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
+    </div>
+    <div class="w-75 text-align-center">
+      <h1>Welcome to JavaScript Course Summary</h1>
+      <nav class="w-50">
+        <div class="display-flex w-100">
+          <a href="index.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-5" id="menu-1">Home</a>
+          <a href="javascript.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-2">JavaScript</a>
+          <a href="jselectors.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-2">JSelectors</a>
+          <a href="jsdom.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-2">JDom</a>
+          <a href="" class="menu w-15 border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-3">JQuery</a>
+          <a href="" class="w-15 menu border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-4">Ajax</a>
+          <a href="" class="w-15 menu border-radius-xxl border-2 padding-top-05 padding-bottom-05 fs-3 margin-left-2" id="menu-5">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="w-100">
+    <section class="display-flex">
+      <div class="w-25">
+        <div class="w-100 align-content-center display-inline-grid padding-2">
+          <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
+          <nav class="margin-left-2 display-inline-grid">
+            <a href="#getElementById" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Id</p>
+            </a>
+            <a href="#attributeValue" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Attribute Value</p>
+            </a>
+            <a href="#class_name" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Class Name</p>
+            </a>
+            <a href="#selectByTagName" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Tag Name</p>
+            </a>
+            <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">About the Course</p>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="w-75 padding-left-1">
+        <div>
+          <div class="display-ruby-text">
+            <p class="fs-1">JSDOM</p>
+          </div>
+          <p>In javascript, the document object provided by the browser can be used to manipolate the document object model and update viewer content via javascript.</p>
+        </div>
+
+        <div id="getElementById">
+          <h2>DOM Manipulation - To-Do- List</h2>
+          <div class="padding-left-5">
+            <p id="t1">Following code example cretes a todo list. </p>
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList"></ul>
+            <p class="fs-4 font-weight-bold">Example:</p>
+            <p>
+              <h2>Code Explanation</h2>
+              <ul>
+                <li>An input field allows users to add new tasks, which are displayed as list items within an unordered list.</li><br>
+                <li>A JavaScript function, addTask(), is defined to handle adding new tasks to the list.</li><br>  
+                <li>document.getElementById("taskInput") function is used to retrieve the HTML element with id "taskInput". 
+                  This function is part of the Document Object Model (DOM) API, which allows javascript to interact with HTML elements. 
+                  It searches the entire HTML document for an element with the specified id and returns a reference to that element. 
+                  The returned value, taskInput, is assigned to a constant variable using the const keyword. 
+                  Once assigned, taskInput represents the input element where users can enter new tasks.</li><br>
+
+                <li>document.getElementById("taskList") is similar to the previous line and retrieves the HTML element with the id "taskList". 
+                  The returned element represnts the unordered list where tasks are displayed is assigned to the constant variable "taskList"
+                  This allows javascript to manipulate the task list, such as adding new tasks or updating existing ones.</li><br>
+                  
+              <li>The value entered into the task input field is extracted and stored in the variable taskText.
+                taskInput.value retrieves the current value of the input element (taskInput).
+                .trim() is a string method that removes any leading and trailing whitespace from the value.
+                The trimmed value is then assigned to the constant variable taskText.
+                This variable holds the text of the task entered by the user, with leading and trailing whitespace removed for consistency.</li><br>
+
+              <li>The if statement initiates a conditional statement.
+                It checks whether the taskText variable is not equal to an empty string (" ").
+                The condition taskText !== " " evaluates to true if the user has entered some text for the task and false if the input is empty.
+                If the condition is true, indicating that the user has entered a task, the code inside the curly braces {} following the if statement will be executed. 
+                Otherwise, if the condition is false, the code inside the curly braces will be skipped.</li><br>
+
+              <li>Next, inside the if block, a new list item element is created using the document.createElement() method.
+                The method document.createElement("li") creates a new HTML element with the specified tag name, in this case, a list item.
+                The newly created list item element is assigned to a constant variable named newTask using the const keyword.
+                This variable holds a reference to the newly created list item element, which will represent the new task in the to-do list.</li><br>
+
+              <li>After creating the new list item element, textContent property of an HTML element is used to set the text content to the value stored in the taskText variable.
+                By assigning taskText to newTask.textContent, the text entered by the user for the new task is added as the content of the newly created list item.
+                This line effectively populates the new list item with the text of the task entered by the user, making it visible within the to-do list.</li><br>
+              
+              <li>taskList.appendChild(newTask) appends the newly created list item (newTask) to the task list (taskList).
+                The appendChild() method is a part of the DOM API, specifically for manipulating the structure of HTML documents.
+                It adds the specified node (newTask in this case) as the last child of the node (taskList) on which the method is called.
+                In this context, newTask, representing the new task entered by the user, is added as a new item in the to-do list represented by taskList.
+                After this line executes, the new task becomes part of the displayed list, visible to the user on the web page.</li><br>
+              
+                <li>taskInput.value = "" resets the value of the task input field (taskInput) to an empty string ("").
+                  By setting taskInput.value to "", the input field is cleared after a task is successfully added to the list.
+                  This action provides a clean slate for the user to enter a new task without having to manually clear the previous input.
+                  After this line executes, the input field is ready for the user to enter another task, improving the user experience by streamlining the task entry process.</li><br>
+                  
+                <li>The else keyword introduces an alternative block of code to be executed if the condition specified in the preceding if statement evaluates to false.
+                  In this context, the else block serves as the alternative action when the user attempts to add a task but leaves the input field empty.
+                  If the condition taskText !== "" evaluates to false, indicating that the input field is empty, the code inside the else block will be executed.</li><br>
+                
+                <li>Inside the else block, alert("Please enter a task!") triggers a JavaScript alert dialog with the message "Please enter a task!".
+                  The alert() function is a built-in JavaScript function used to display a dialog box with a specified message to the user.
+                  In this case, the alert informs the user that they must enter a task before adding it to the to-do list.
+                  The execution of this line interrupts the flow of the script and displays the alert message in the user's browser window.
+                  After the user dismisses the alert by clicking "OK", the script continues executing, without adding an empty task to the list or performing any further actions related to task addition.</li><br>
+
+
+              </ul>
+            </p>
+
+<!-- JavaScript Code -->
+<h3>JavaScript Code:</h3>
+<pre>
+<code>
+  // Function to add a new task
+  function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== "") {
+      const newTask = document.createElement("li");
+      newTask.textContent = taskText;
+
+      taskList.appendChild(newTask);
+      taskInput.value = "";
+    } else {
+      alert("Please enter a task!");
+    }
+  }
+</code>
+</pre>
+
+          </div>
+        </div>
+<div>
+
+<!-- JavaScript -->
+<script>
+  // Function to add a new task
+  function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== "") {
+      const newTask = document.createElement("li");
+      newTask.textContent = taskText;
+
+      taskList.appendChild(newTask);
+      taskInput.value = "";
+    } else {
+      alert("Please enter a task!");
+    }
+  }
+</script>
+
+</div>
+
+</body>
+</html>
