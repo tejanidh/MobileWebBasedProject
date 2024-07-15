@@ -78,6 +78,7 @@ function renderData(data) {
   container.innerHTML = JSON.stringify(data, null, 2);
 }
           </pre>
+          <p>This code snippet fetches JSON data from a local file named `data.json` and processes it. It begins by using the `fetch` API to retrieve the data. Upon a successful response, the data is converted from JSON format using the `.json()` method. The processed data is then logged to the console and passed to a function named `renderData`. This function is responsible for rendering the JSON data into an HTML element with the ID `json-data`, displaying it in a formatted (pretty-printed) manner. If an error occurs during the fetch operation, it is caught and logged to the console.</p>
         </div>
 
         <div class="example">
@@ -136,38 +137,10 @@ function renderData(data) {
   container.innerHTML = JSON.stringify(data, null, 2);
 }
           </pre>
+          <p>This JavaScript code snippet fetches JSON data from a local file named `data.json` and includes comprehensive error handling. It uses the `fetch` API to request the data and checks if the response is successful using `response.ok`. If the response is not successful, it throws an error with an appropriate message. If the response is successful, it converts the response to JSON format using `response.json()`. The JSON data is then logged to the console and passed to a function named `renderData`, which displays the data in an HTML element with the ID `json-data` in a formatted (pretty-printed) manner. If any error occurs during the fetch process, it is caught and logged to the console with the error message.</p>
         </div>
 
-        <div class="example">
-          <h3 class="example-title">Example 4: Fetch API with Custom Options</h3>
-          <p class="example-description">
-            Customize fetch options, such as headers and methods.
-          </p>
-          <pre class="code-example">
-fetch('https://api.example.com/data', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_TOKEN_HERE'
-  },
-  body: JSON.stringify({ key: 'value' })
-})
-.then(response => response.json())
-.then(data => {
-  console.log(data); // Handle JSON data here
-  renderData(data); // Example function to render data
-})
-.catch(error => {
-  console.error('Error fetching data:', error);
-});
-
-function renderData(data) {
-  // Example: Display data in HTML
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-          </pre>
-        </div>
+       
 
       </div>
     </section>
