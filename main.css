@@ -348,3 +348,7 @@ padding-right: 2%;
  }
 
  body {font-family: Arial, sans-serif;}
+
+ .h-200 {
+    height: 200px !important;
+ }
