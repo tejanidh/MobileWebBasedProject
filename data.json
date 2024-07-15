@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "First Object",
+      "description": "This is the description for the first object.",
+      "details": {
+        "author": "John Doe",
+        "publishedDate": "2023-05-15",
+        "tags": ["JavaScript", "JSON", "Web Development"]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Second Object",
+      "description": "This is the description for the second object.",
+      "details": {
+        "author": "Jane Smith",
+        "publishedDate": "2023-06-20",
+        "tags": ["HTML", "CSS", "Frontend"]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Third Object",
+      "description": "This is the description for the third object.",
+      "details": {
+        "author": "Michael Brown",
+        "publishedDate": "2023-07-10",
+        "tags": ["React", "Node.js", "Backend"]
+      }
+    }
+  ]
+  
