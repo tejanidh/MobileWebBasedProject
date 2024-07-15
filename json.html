@@ -28,7 +28,69 @@
       </nav>
     </div>
   </header>
+  <main class="w-100">
+    <section class="display-flex">
+      <div class="w-25">
+        <div class="w-100 align-content-center display-inline-grid padding-2">
+          <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
+          <nav class="margin-left-2 display-inline-grid">
+            <a href="#getElementById" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Fetch API (fetch)</p>
+            </a>
+            <a href="#attributeValue" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">XMLHttpRequest (XHR)</p>
+            </a>
+            <a href="#class_name" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Class Name</p>
+            </a>
+            <a href="#selectByTagName" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Select By Tag Name</p>
+            </a>
+            <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">About the Course</p>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="w-75 padding-left-1">
+        <div>
+          <div class="display-ruby-text">
+            <p class="fs-1">JSELECTORS</p>
+          </div>
+          <p>In javascript, we have different types of selectors such as by tag, by classname, by tag name and so on. Let's catch it up.</p>
+        </div>
 
+        <div id="getElementById">
+          <h2>Select by Id</h2>
+          <div class="padding-left-5">
+            <p id="t1">For this, we have one function called <b>document.getElementById("ID_name")</b>. This function is connected to the whole HTML page, which is considered as a document. This function is used to select any tag by using an id. So, it selects only one tag at a time. </p>
+            <p id="t2">Let's take an example. This section is linked with the quick links section. if you will click it from this below button this section whole words case will be changed.</p>
+            <button id="getElementById_capital">Let's make it capital font</button>
+            <button id="getElementById_lower">Let's make it Lower case Font</button>
+            <p class="fs-4 font-weight-bold">Example:</p>
+
+            <pre>
+              <code>
+var t1 = document.getElementById("t1").innerHTML;
+t1 = t1.toLocaleUpperCase();
+document.getElementById("t1").innerHTML = t1;
+/*To make it to lower case*/
+var t1 = document.getElementById("t1").innerHTML;
+t1 = t1.toLocaleLowerCase();
+document.getElementById("t1").innerHTML = t1;
+              </code>
+            </pre>
+          </div>
+        </div>
+
+      
+        <div id="aboutTheCourse">
+          <h2>About the Course</h2>
+          <p>This course is designed to teach you the fundamentals of JavaScript, including working with the DOM, using different selectors, and manipulating HTML elements. By the end of this course, you'll have a solid understanding of how to use JavaScript to interact with web pages.</p>
+        </div>
+      </div>
+    </section>
+  </main>
   <main class="container">
     <section id="selectors" class="section">
       <h2 class="section-title">Getting Json DATA With Fetch & XMLHttpRequest (XHR). </h2>
