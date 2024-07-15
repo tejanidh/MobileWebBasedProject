@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript JSON Examples</title>
-  <link rel="stylesheet" href="./main.css" />
-  <link rel="stylesheet" href="./json.css">
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/json.css">
+  <link rel="stylesheet" href="./styles/carousel.css">
+  <script src="./JS/json.js" ></script>
 </head>
-<body>
+<body onload="listProduct()">
 
   <header class="display-flex h-30">
     <div class="w-25 h-100">
@@ -34,20 +36,11 @@
         <div class="w-100 align-content-center display-inline-grid padding-2">
           <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
           <nav class="margin-left-2 display-inline-grid">
-            <a href="#getElementById" target="_self" class="vertical-menu padding-1 padding-left-10">
+            <a href="#getchAPI" target="_self" class="vertical-menu padding-1 padding-left-10">
               <p class="fs-4 text-primary">Fetch API (fetch)</p>
             </a>
-            <a href="#attributeValue" target="_self" class="vertical-menu padding-1 padding-left-10">
+            <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
               <p class="fs-4 text-primary">XMLHttpRequest (XHR)</p>
-            </a>
-            <a href="#class_name" target="_self" class="vertical-menu padding-1 padding-left-10">
-              <p class="fs-4 text-primary">Select By Class Name</p>
-            </a>
-            <a href="#selectByTagName" target="_self" class="vertical-menu padding-1 padding-left-10">
-              <p class="fs-4 text-primary">Select By Tag Name</p>
-            </a>
-            <a href="#aboutTheCourse" target="_self" class="vertical-menu padding-1 padding-left-10">
-              <p class="fs-4 text-primary">About the Course</p>
             </a>
           </nav>
         </div>
@@ -55,217 +48,109 @@
       <div class="w-75 padding-left-1">
         <div>
           <div class="display-ruby-text">
-            <p class="fs-1">JSELECTORS</p>
+            <p class="fs-1">JSON File Format handling Content</p>
           </div>
-          <p>In javascript, we have different types of selectors such as by tag, by classname, by tag name and so on. Let's catch it up.</p>
+          <p>There are several forms of storing a data and handling them. but to send data securely and with all punctuation JSON helps a lot. it provides column name as index and that thing make it to understand better.</p>
         </div>
 
-        <div id="getElementById">
-          <h2>Select by Id</h2>
+        <div id="fetchAPI">
+          <h2>Fetch API method</h2>
           <div class="padding-left-5">
-            <p id="t1">For this, we have one function called <b>document.getElementById("ID_name")</b>. This function is connected to the whole HTML page, which is considered as a document. This function is used to select any tag by using an id. So, it selects only one tag at a time. </p>
-            <p id="t2">Let's take an example. This section is linked with the quick links section. if you will click it from this below button this section whole words case will be changed.</p>
-            <button id="getElementById_capital">Let's make it capital font</button>
-            <button id="getElementById_lower">Let's make it Lower case Font</button>
+            <p id="t1">There is a function called fetch() and after that we have it's class related method called then() and again we have same thing with that method, too. In the fetch() method, you need to write link for file whether it's online or else own server related file. and in first then() method, you have to just create object of data. and in the second then() method, we have to manipulate whole data as we want for html conversion.</p>
+            <p id="t2">Let's take an example. This section is linked with the quick links section. </p>
             <p class="fs-4 font-weight-bold">Example:</p>
-
+            <form onsubmit="return false;">
+              <label>Select a Product :</label>
+              <select id="productName" onchange="searchProduct()">
+                
+              </select>
+            
+            </form> 
+            <div class="card w-30 margin-top-3" id="card" >
+              <img id="prImg" alt="Avatar" class="w-100">
+              <div class="container">
+                <h3><b id="prTitle"></b></h3>
+                <p id="prDesc"></p>
+                <label for="Brand">Brand : </label><b><h4 id="prBrand"></h4></b>
+               <label for="categories">Category : </label><h4 id="prCategory"></h4>
+               <label for="rating">Rating : </label><h4 id="prRating"></h4>
+               <label for="price">Price : </label><h4 id="prPrice"></h4>
+               <label for="Availibility">Price : </label><h4 id="prAvailibility"></h4>
+              </div>
+            </div> 
             <pre>
               <code>
-var t1 = document.getElementById("t1").innerHTML;
-t1 = t1.toLocaleUpperCase();
-document.getElementById("t1").innerHTML = t1;
-/*To make it to lower case*/
-var t1 = document.getElementById("t1").innerHTML;
-t1 = t1.toLocaleLowerCase();
-document.getElementById("t1").innerHTML = t1;
+function listProduct()
+{
+    var countryname=document.getElementById("productName");
+    var info="";
+    fetch("data.json")
+    .then(res=>res.json())
+    .then(data=>
+        {
+            console.log(data);
+          for(let element of data.products)
+            {
+                info+='<option value={element.id}>element.title</option>';
+            }
+            countryname.innerHTML=info;
+            card.style.display="block";
+            document.getElementById("prTitle").innerHTML= data.products[0].title;
+                        document.getElementById("prImg").setAttribute("src", data.products[0].thumbnail);
+                        document.getElementById("prPrice").innerHTML=  data.products[0].price;
+                        document.getElementById("prRating").innerHTML=  data.products[0].rating + " / 5.0";
+                        document.getElementById("prCategory").innerHTML=  data.products[0].category;
+                        document.getElementById("prAvailibility").innerHTML=  data.products[0].stock;
+                        document.getElementById("prDesc").innerHTML=  data.products[0].description;
+        });
+}
               </code>
             </pre>
           </div>
         </div>
-
-      
-        <div id="aboutTheCourse">
-          <h2>About the Course</h2>
-          <p>This course is designed to teach you the fundamentals of JavaScript, including working with the DOM, using different selectors, and manipulating HTML elements. By the end of this course, you'll have a solid understanding of how to use JavaScript to interact with web pages.</p>
+        <div id="XMLHttpRequest">
+          <h2>XMLHTTPRequest Methods</h2>
+          <div class="padding-left-5">
+            <p id="t1">There is a class called XMlHttpRequest. Need to create object of it. and after that we have create connection with the help of link or else file path by using open(method_name, path, asynchronization_true_false) function. and then we need to send a request using send() method. when it get response, we have to start work with onload function of object of XMLHTTPRequest. It returns whole JSON formatted data as simple the text. then we have to convert that string to JSON object. and the same way we used with fetch() method, we can access the data.</p>
+             
+            <pre>
+              <code>
+function searchProduct()
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "data.json", true);
+    xhttp.send();
+    var card=document.getElementById("card");
+    var search=document.getElementById("productName").value ;
+    card.style.display="block";
+    xhttp.onload = function() {
+        data = this.responseText;
+        dataJSON = JSON.parse(data);
+        console.log(dataJSON.products);
+        for(let product of dataJSON.products)
+            {
+                if(product.id==search)
+                    {
+                        document.getElementById("prTitle").innerHTML= product.title;
+                        document.getElementById("prImg").setAttribute("src",product.thumbnail);
+                        document.getElementById("prPrice").innerHTML= product.price;
+                        document.getElementById("prRating").innerHTML= product.rating + " / 5.0";
+                        document.getElementById("prCategory").innerHTML= product.category;
+                        document.getElementById("prAvailibility").innerHTML= product.stock;
+                        document.getElementById("prDesc").innerHTML= product.description;
+                    }
+            }
+    }       
+} 
+              </code>
+            </pre>
+          </div>
         </div>
-      </div>
     </section>
   </main>
-  <main class="container">
-    <section id="selectors" class="section">
-      <h2 class="section-title">Getting Json DATA With Fetch & XMLHttpRequest (XHR). </h2>
-      <div class="section-content">
-        
-        <ul class="selector-list">
-           <li>Fetch API (fetch)</li>
-          <li>XMLHttpRequest (XHR)</li>
-        </ul>
-        
-      </div>
-    </section>
-    <section id="json-concepts" class="section">
-      <h2 class="section-title">JSON Concepts</h2>
-      <div class="section-content">
-        <p class="paragraph">
-          JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate.
-        </p>
-        <p class="paragraph">
-          It is widely used for data exchange between a server and a web application. JSON is compatible with many programming languages, including JavaScript.
-        </p>
-      </div>
-    </section>
-
-    <section id="json-examples" class="section">
-      <h2 class="section-title">JSON Examples</h2>
-      <div class="section-content">
-        <div class="example">
-          <h3 class="example-title">Example 1: Fetching JSON Data using Fetch API</h3>
-          <p class="example-description">
-            Fetch JSON data from a local file using the fetch API.
-          </p>
-          <pre class="code-example">
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data); // Handle JSON data here
-    renderData(data); // Example function to render data
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
-
-function renderData(data) {
-  // Example: Display data in HTML
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-          </pre>
-          <p>This code snippet fetches JSON data from a local file named `data.json` and processes it. It begins by using the `fetch` API to retrieve the data. Upon a successful response, the data is converted from JSON format using the `.json()` method. The processed data is then logged to the console and passed to a function named `renderData`. This function is responsible for rendering the JSON data into an HTML element with the ID `json-data`, displaying it in a formatted (pretty-printed) manner. If an error occurs during the fetch operation, it is caught and logged to the console.</p>
-        </div>
-
-        <div class="example">
-          <h3 class="example-title">Example 2: Fetching JSON Data using XMLHttpRequest</h3>
-          <p class="example-description">
-            Use XMLHttpRequest to fetch JSON data asynchronously.
-          </p>
-          <pre class="code-example">
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'data.json', true);
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    if (xhr.status === 200) {
-      var data = JSON.parse(xhr.responseText);
-      console.log(data); // Handle JSON data here
-      renderData(data); // Example function to render data
-    } else {
-      console.error('Error fetching data:', xhr.statusText);
-    }
-  }
-};
-xhr.send();
-
-function renderData(data) {
-  // Example: Display data in HTML
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-          </pre>
-        </div>
-
-        <div class="example">
-          <h3 class="example-title">Example 3: Error Handling with Fetch API</h3>
-          <p class="example-description">
-            Handle errors when fetching JSON data using the Fetch API.
-          </p>
-          <pre class="code-example">
-fetch('data.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data); // Handle JSON data here
-    renderData(data); // Example function to render data
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error.message);
-  });
-
-function renderData(data) {
-  // Example: Display data in HTML
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-          </pre>
-          <p>This JavaScript code snippet fetches JSON data from a local file named `data.json` and includes comprehensive error handling. It uses the `fetch` API to request the data and checks if the response is successful using `response.ok`. If the response is not successful, it throws an error with an appropriate message. If the response is successful, it converts the response to JSON format using `response.json()`. The JSON data is then logged to the console and passed to a function named `renderData`, which displays the data in an HTML element with the ID `json-data` in a formatted (pretty-printed) manner. If any error occurs during the fetch process, it is caught and logged to the console with the error message.</p>
-        </div>
-
-       
-
-      </div>
-    </section>
-
-    <section id="about-json" class="section">
-      <h2 class="section-title">About JSON</h2>
-      <div class="section-content">
-        <p class="paragraph">
-          JSON plays a crucial role in modern web development by facilitating efficient data exchange and manipulation. It is essential for building dynamic and interactive web applications.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Mobile-Web Based Development Subject Summary</p>
-    </div>
+  <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
+    <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
   </footer>
-
-  <script>
-    function fetch(){
-
-      fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    renderData(data); 
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
-
-function renderData(data) {
- 
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-    }
-
-  function xml(){
-    var xhr = new XMLHttpRequest();
-xhr.open('GET', 'data.json', true);
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    if (xhr.status === 200) {
-      var data = JSON.parse(xhr.responseText);
-      console.log(data); 
-      renderData(data); 
-    } else {
-      console.error('Error fetching data:', xhr.statusText);
-    }
-  }
-};
-xhr.send();
-
-function renderData(data) {
-  
-  const container = document.getElementById('json-data');
-  container.innerHTML = JSON.stringify(data, null, 2);
-}
-  }  
-  </script>
 
 
 </body>
