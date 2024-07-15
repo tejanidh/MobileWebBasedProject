@@ -161,5 +161,50 @@ function renderData(data) {
     </div>
   </footer>
 
+  <script>
+    function fetch(){
+
+      fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    renderData(data); 
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+function renderData(data) {
+ 
+  const container = document.getElementById('json-data');
+  container.innerHTML = JSON.stringify(data, null, 2);
+}
+    }
+
+  function xml(){
+    var xhr = new XMLHttpRequest();
+xhr.open('GET', 'data.json', true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    if (xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+      console.log(data); 
+      renderData(data); 
+    } else {
+      console.error('Error fetching data:', xhr.statusText);
+    }
+  }
+};
+xhr.send();
+
+function renderData(data) {
+  
+  const container = document.getElementById('json-data');
+  container.innerHTML = JSON.stringify(data, null, 2);
+}
+  }  
+  </script>
+
+
 </body>
 </html>
