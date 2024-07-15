@@ -1,0 +1,218 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Summary Website</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./javascript.css">
+  </head>
+  <body class="w-100 bg-f0f0f0 padding-0 margin-0">
+    <header class="display-flex h-30">
+      <div class="w-25 h-100">
+        <img src="./web-logo.png" alt="NoImage" class="w-100 h-100">
+      </div>
+      <div class="w-75 text-align-center">
+        <h1>Welcome to JavaScript Course Summary</h1>
+        <nav class="w-50">
+            <div class="display-flex w-100 ">
+              <a href="index.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-5 " id="menu-1">Home</a>
+              <a href="javascript.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JavaScript</a>
+              <a href="" class=" menu w-15 border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-3">JQuery</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2   padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-4">Ajax</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-5">Contact</a>
+            </div>
+      </nav>
+      </div>
+      
+    </header>
+    
+    <main>
+        <button onclick="displayContent()" class="fs-3">Display</button>
+
+        <h1 id="result"></h1>
+        
+        <div id="displayArea"></div>
+
+        <button onclick="jsSelector()" class="fs-3">jsSelector</button>
+        <button onclick="jsSelectors()" class="fs-3">jsSelectors</button>
+
+        <h1>jsSelector</h1>
+        <h1 class="head">jsSelector</h1>
+        <h1 id="selector1"></h1>
+
+        <button onclick="styleImages()"  class="fs-3">Style Images</button>
+        <br>
+        <img src="./DISCIPLINE.png" alt="h">
+
+        <form action="" onsubmit="return false">
+            <input type="text" id="user" placeholder="User Name">
+            <input type="password" id="pwd" placeholder="Password">
+            <input type="submit" value="Login" onclick="manageStorage()">
+        </form>
+       
+        <h1 id="result"></h1>
+    </main>
+    
+    <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
+        <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
+      </footer>
+
+    <script>
+        function displayContent() {
+            var displayArea = document.getElementById("displayArea");
+            var sectionContent = `
+                <section>
+                    <h2>Data Types and Variables</h2>
+            <p>JavaScript supports various data types including:</p>
+            <ul>
+                <li><strong>String:</strong> Textual data. Example: <code>let name = "John";</code></li>
+                <li><strong>Number:</strong> Numeric data. Example: <code>let age = 30;</code></li>
+                <li><strong>Boolean:</strong> True or false. Example: <code>let isStudent = true;</code></li>
+                <li><strong>Object:</strong> Collections of key-value pairs. Example: <code>let person = {name: "John", age: 30};</code></li>
+                <li><strong>Array:</strong> Ordered lists of values. Example: <code>let fruits = ["Apple", "Banana", "Cherry"];</code></li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>
+var x = 100;
+alert("The datatype of x: " + typeof(x));
+x = "Sheridan College";
+alert("The datatype of x: " + typeof(x));
+
+            </code></pre>
+        </section>
+        <section>
+            <h2>Control Constructs</h2>
+            <p>JavaScript provides several control constructs for flow control:</p>
+            <ul>
+                <li><strong>If-Else:</strong> Conditional statements.</li>
+                <li><strong>For Loop:</strong> Iterates over a block of code a number of times.</li>
+                <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Functions</h2>
+            <p>Functions are blocks of code designed to perform a particular task. Example:</p>
+            <pre><code>
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+            </code></pre>
+        </section>
+        <section>
+            <h2>Objects</h2>
+            <p>Objects are collections of properties and methods. Example:</p>
+            <pre><code>
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+            </code></pre>
+        </section>
+        <section>
+            <h2>Arrays</h2>
+            <p>Arrays are ordered lists of values. Example:</p>
+            <pre><code>
+var fruits = ["Apple", "Banana", "Cherry"];
+            </code></pre>
+        </section>
+        <section>
+            <h2>DOM Manipulation</h2>
+            <p>The Document Object Model (DOM) represents the structure of a web page. JavaScript can be used to manipulate the DOM. Example:</p>
+            <pre><code>
+document.getElementById("myElement").innerHTML = "New Content";
+            </code></pre>
+        </section>
+        <section>
+            <h2>Examples</h2>
+            <h3>Style Images</h3>
+            <p>This function styles all PNG images on the page:</p>
+            <pre><code>
+function styleImages() {
+    document.querySelectorAll("img[src$='.png']").forEach(x => {
+        x.style.height = "9px";
+        x.style.width = "9px";
+        x.style.border = "5px solid grey";
+    });
+}
+            </code></pre>
+            <h3>DOM Selection</h3>
+            <p>These functions manipulate elements selected by class and tag name:</p>
+            <pre><code>
+function jsSelector() {
+    var head = document.querySelector(".head");
+    head.style.background = "red";
+}
+
+function jsSelectors() {
+    document.querySelectorAll("h1").forEach(x => {
+        x.style.color = 'red';
+        x.innerHTML = "<i>Use of QuerySelectorAll</i>";
+    });
+}
+            </code></pre>
+            <section>
+                <h2>Local Storage</h2>
+                <p>It is like a built in storage in the web browser. This means users can leave a site or turn off their computer and
+                    come back the next day and the data will still be there if not cleared
+                    by user. Some basic functions are listed below</p>
+                    <li>
+                        <ul>localStorage.setItem(key, value)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.getItem(key)</ul>
+                        <ul>localStorage.clear</ul>
+                    </li>
+                    <pre><code>localStorage.setItem("user","StudM");
+                    localStorage.setItem("pwd","StudM");</code></pre>
+                    <p>Here the username "student" is set and the password "student123" is set with respective keys 'user' and 'pwd'</p>
+            </section>
+            `;
+            displayArea.innerHTML = sectionContent;
+        }
+
+        function jsSelector() {
+            var head = document.querySelector("h1");
+            head.style.background = "red";
+        }
+
+        function jsSelectors() {
+            var heads = document.querySelectorAll("h1");
+            heads.forEach(head => {
+                head.style.color = 'red';
+                head.innerHTML = "<i>Use of QuerySelectorAll</i>";
+            });
+        }
+
+        function styleImages() {
+            document.querySelectorAll("img[src$='.png']").forEach(img => {
+                img.style.height = "9px";
+                img.style.width = "9px";
+                img.style.border = "5px solid grey";
+            });
+        }
+
+        function manageStorage() {
+            localStorage.setItem("user", "StuM");
+            localStorage.setItem("pwd", "StuM");
+
+            var userIn = document.getElementById("user").value;
+            var passIn = document.getElementById("pwd").value;
+            var user = localStorage.getItem("user");
+            var pwd = localStorage.getItem("pwd");
+            var result = document.getElementById("result");
+
+            if (userIn === user && passIn === pwd) {
+                result.classList.add('success');
+                result.innerHTML = "Login Successful";    
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            } else {  
+                result.classList.add('fail');
+                result.innerHTML = "Login failed";
+                result.innerHTML = `User Name : ${user} and password : ${pwd}`;
+            }
+        }
+    </script>
+</body>
+</html>
