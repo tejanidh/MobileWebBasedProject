@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript JSON Examples</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/json.css">
+  <link rel="stylesheet" href="./styles/carousel.css">
+  <script src="./JS/json.js" ></script>
+</head>
+<body onload="listProduct()">
+
+  <header class="display-flex h-30">
+    <div class="w-25 h-100">
+      <img src="./web-logo.png" alt="NoImage" class="w-100 h-200">
+    </div>
+    <div class="w-75 text-align-center">
+      <h1>Welcome to JavaScript Course Summary</h1>
+      <nav class="w-50">
+        <div class="display-flex w-100">
+              <a href="index.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-5 " id="menu-1">Home</a>
+              <a href="javascript.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-2">JavaScript</a>
+              <a href="jselectors.html" class=" border-2 w-15 menu padding-top-05  padding-bottom-05 fs-3 border-radius-xxl margin-left-2 " id="menu-3">JSelectors</a>
+              <a href="jsdom.html" class="border-2 w-15 menu padding-top-05 padding-bottom-05 fs-3 border-radius-xxl margin-left-2" id="menu-4">JSDom</a>
+              <a href="json.html" class=" menu w-15 border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-5">JSON</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2   padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-6">Ajax</a>
+              <a href="" class="w-15 menu border-radius-xxl border-2  padding-top-05  padding-bottom-05 fs-3 margin-left-2 " id="menu-7">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="w-100">
+    <section class="display-flex">
+      <div class="w-25">
+        <div class="w-100 align-content-center display-inline-grid padding-2">
+          <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
+          <nav class="margin-left-2 display-inline-grid">
+            <a href="#getchAPI" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">Fetch API (fetch)</p>
+            </a>
+            <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
+              <p class="fs-4 text-primary">XMLHttpRequest (XHR)</p>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="w-75 padding-left-1">
+        <div>
+          <div class="display-ruby-text">
+            <p class="fs-1">JSON File Format handling Content</p>
+          </div>
+          <p>There are several forms of storing a data and handling them. but to send data securely and with all punctuation JSON helps a lot. it provides column name as index and that thing make it to understand better.</p>
+        </div>
+
+        <div id="fetchAPI">
+          <h2>Fetch API method</h2>
+          <div class="padding-left-5">
+            <p id="t1">There is a function called fetch() and after that we have it's class related method called then() and again we have same thing with that method, too. In the fetch() method, you need to write link for file whether it's online or else own server related file. and in first then() method, you have to just create object of data. and in the second then() method, we have to manipulate whole data as we want for html conversion.</p>
+            <p id="t2">Let's take an example. This section is linked with the quick links section. </p>
+            <p class="fs-4 font-weight-bold">Example:</p>
+            <form onsubmit="return false;">
+              <label>Select a Product :</label>
+              <select id="productName" onchange="searchProduct()">
+                
+              </select>
+            
+            </form> 
+            <div class="card w-30 margin-top-3" id="card" >
+              <img id="prImg" alt="Avatar" class="w-100">
+              <div class="container">
+                <h3><b id="prTitle"></b></h3>
+                <p id="prDesc"></p>
+                <label for="Brand">Brand : </label><b><h4 id="prBrand"></h4></b>
+               <label for="categories">Category : </label><h4 id="prCategory"></h4>
+               <label for="rating">Rating : </label><h4 id="prRating"></h4>
+               <label for="price">Price : </label><h4 id="prPrice"></h4>
+               <label for="Availibility">Price : </label><h4 id="prAvailibility"></h4>
+              </div>
+            </div> 
+            <pre>
+              <code>
+function listProduct()
+{
+    var countryname=document.getElementById("productName");
+    var info="";
+    fetch("data.json")
+    .then(res=>res.json())
+    .then(data=>
+        {
+            console.log(data);
+          for(let element of data.products)
+            {
+                info+='<option value={element.id}>element.title</option>';
+            }
+            countryname.innerHTML=info;
+            card.style.display="block";
+            document.getElementById("prTitle").innerHTML= data.products[0].title;
+                        document.getElementById("prImg").setAttribute("src", data.products[0].thumbnail);
+                        document.getElementById("prPrice").innerHTML=  data.products[0].price;
+                        document.getElementById("prRating").innerHTML=  data.products[0].rating + " / 5.0";
+                        document.getElementById("prCategory").innerHTML=  data.products[0].category;
+                        document.getElementById("prAvailibility").innerHTML=  data.products[0].stock;
+                        document.getElementById("prDesc").innerHTML=  data.products[0].description;
+        });
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div id="XMLHttpRequest">
+          <h2>XMLHTTPRequest Methods</h2>
+          <div class="padding-left-5">
+            <p id="t1">There is a class called XMlHttpRequest. Need to create object of it. and after that we have create connection with the help of link or else file path by using open(method_name, path, asynchronization_true_false) function. and then we need to send a request using send() method. when it get response, we have to start work with onload function of object of XMLHTTPRequest. It returns whole JSON formatted data as simple the text. then we have to convert that string to JSON object. and the same way we used with fetch() method, we can access the data.</p>
+             
+            <pre>
+              <code>
+function searchProduct()
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "data.json", true);
+    xhttp.send();
+    var card=document.getElementById("card");
+    var search=document.getElementById("productName").value ;
+    card.style.display="block";
+    xhttp.onload = function() {
+        data = this.responseText;
+        dataJSON = JSON.parse(data);
+        console.log(dataJSON.products);
+        for(let product of dataJSON.products)
+            {
+                if(product.id==search)
+                    {
+                        document.getElementById("prTitle").innerHTML= product.title;
+                        document.getElementById("prImg").setAttribute("src",product.thumbnail);
+                        document.getElementById("prPrice").innerHTML= product.price;
+                        document.getElementById("prRating").innerHTML= product.rating + " / 5.0";
+                        document.getElementById("prCategory").innerHTML= product.category;
+                        document.getElementById("prAvailibility").innerHTML= product.stock;
+                        document.getElementById("prDesc").innerHTML= product.description;
+                    }
+            }
+    }       
+} 
+              </code>
+            </pre>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
+    <p class="fs-4">&copy; 2024 Mobile-Web Based Development Subject Summary</p>
+  </footer>
+
+
+</body>
+</html>
