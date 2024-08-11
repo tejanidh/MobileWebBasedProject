@@ -36,18 +36,27 @@
           <p class="fs-2 w-40 padding-left-30 font-weight-semibold">Quick Links</p>
           <nav class="margin-left-2 display-inline-grid">
             <a href="#getchAPI" target="_self" class="vertical-menu padding-1 padding-left-10">
-              <p class="fs-4 text-primary">Fetch API (fetch)</p>
+              <p class="fs-4 text-primary">Component</p>
             </a>
             <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
-              <p class="fs-4 text-primary">XMLHttpRequest (XHR)</p>
+              <p class="fs-4 text-primary">Directive</p>
             </a>
+            <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
+                <p class="fs-4 text-primary">Material</p>
+              </a>
+              <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
+                <p class="fs-4 text-primary">Service</p>
+              </a>
+              <a href="#XMLHttpRequest" target="_self" class="vertical-menu padding-1 padding-left-10">
+                <p class="fs-4 text-primary">Routing</p>
+              </a>
           </nav>
         </div>
       </div>
       <div class="w-75 padding-left-1">
         <div>
           <div class="display-ruby-text">
-            <p class="fs-1">JSON File Format handling Content</p>
+            <p class="fs-1">Angular</p>
           </div>
           <p>There are several forms of storing a data and handling them. but to send data securely and with all punctuation JSON helps a lot. it provides column name as index and that thing make it to understand better.</p>
         </div>
@@ -107,44 +116,7 @@ function listProduct()
             </pre>
           </div>
         </div>
-        <div id="XMLHttpRequest">
-          <h2>XMLHTTPRequest Methods</h2>
-          <div class="padding-left-5">
-            <p id="t1">There is a class called XMlHttpRequest. Need to create object of it. and after that we have create connection with the help of link or else file path by using open(method_name, path, asynchronization_true_false) function. and then we need to send a request using send() method. when it get response, we have to start work with onload function of object of XMLHTTPRequest. It returns whole JSON formatted data as simple the text. then we have to convert that string to JSON object. and the same way we used with fetch() method, we can access the data.</p>
-             
-            <pre>
-              <code>
-function searchProduct()
-{
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "data.json", true);
-    xhttp.send();
-    var card=document.getElementById("card");
-    var search=document.getElementById("productName").value ;
-    card.style.display="block";
-    xhttp.onload = function() {
-        data = this.responseText;
-        dataJSON = JSON.parse(data);
-        console.log(dataJSON.products);
-        for(let product of dataJSON.products)
-            {
-                if(product.id==search)
-                    {
-                        document.getElementById("prTitle").innerHTML= product.title;
-                        document.getElementById("prImg").setAttribute("src",product.thumbnail);
-                        document.getElementById("prPrice").innerHTML= product.price;
-                        document.getElementById("prRating").innerHTML= product.rating + " / 5.0";
-                        document.getElementById("prCategory").innerHTML= product.category;
-                        document.getElementById("prAvailibility").innerHTML= product.stock;
-                        document.getElementById("prDesc").innerHTML= product.description;
-                    }
-            }
-    }       
-} 
-              </code>
-            </pre>
-          </div>
-        </div>
+        
     </section>
   </main>
   <footer class="w-100 h-8 border-top-1 display-ruby-text align-content-center padding-bottom-1 bg-black text-light">
